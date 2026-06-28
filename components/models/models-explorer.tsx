@@ -157,15 +157,15 @@ export function ModelsExplorer() {
                   {/* Rates */}
                   <div className="md:text-right">
                     <span className="md:hidden text-xs text-muted-foreground mr-2">输入</span>
-                    <span className="font-mono text-sm">{m.inputRate}</span>
+                    <span className="font-mono text-sm">{m.comingSoon ? "—" : m.inputRate}</span>
                   </div>
                   <div className="md:text-right">
                     <span className="md:hidden text-xs text-muted-foreground mr-2">输出</span>
-                    <span className="font-mono text-sm">{m.outputRate}</span>
+                    <span className="font-mono text-sm">{m.comingSoon ? "—" : m.outputRate}</span>
                   </div>
                   <div className="md:text-right">
                     <span className="md:hidden text-xs text-muted-foreground mr-2">缓存</span>
-                    <span className="font-mono text-sm">{m.cacheRate}</span>
+                    <span className="font-mono text-sm">{m.comingSoon ? "—" : m.cacheRate}</span>
                   </div>
                 </div>
               ))}
