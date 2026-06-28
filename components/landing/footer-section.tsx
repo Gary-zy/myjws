@@ -8,7 +8,7 @@ const footerLinks = {
     { name: "功能特性", href: "/#features" },
     { name: "接入流程", href: "/#how-it-works" },
     { name: "模型广场", href: "/models" },
-    { name: "价格", href: "/#pricing" },
+    { name: "价格", href: "/models" },
   ],
   开发者: [
     { name: "接入文档", href: "/#developers" },
@@ -17,7 +17,7 @@ const footerLinks = {
     { name: "服务状态", href: "#" },
   ],
   帮助: [
-    { name: "充值说明", href: "#pricing" },
+    { name: "充值说明", href: "/models" },
     { name: "常见问题", href: "#" },
     { name: "联系客服", href: "#", badge: "在线" },
     { name: "加入交流群", href: "#" },
@@ -50,7 +50,7 @@ export function FooterSection() {
             {/* Brand Column */}
             <div className="col-span-2">
               <a href="#" className="inline-flex items-center gap-2 mb-6">
-                <img src="/myjarvis-icon.png" alt="MY JARVIS" className="h-9 w-9" />
+                <img src="/myjarvis-icon.png" alt="MY JARVIS" className="h-9 w-9 dark:invert" />
                 <span className="text-2xl font-display">MY JARVIS</span>
               </a>
 
