@@ -61,7 +61,7 @@ export function ModelsExplorer() {
 
       {/* Table header note */}
       <p className="text-sm text-muted-foreground mb-4">
-        价格单位为<span className="text-foreground font-medium">人民币 / 1M tokens</span>，按官方公开价计费，输入 / 输出 / 缓存与官方完全一致，不加价、不降智。
+        价格单位为<span className="text-foreground font-medium">美元 / 1M tokens</span>，按官方公开价计费，输入 / 输出 / 缓存与官方完全一致，不加价、不降智。
       </p>
 
       {/* Groups */}
