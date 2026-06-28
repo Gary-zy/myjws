@@ -31,6 +31,10 @@ export function AnimatedSphere() {
       const rect = canvas.getBoundingClientRect();
       ctx.clearRect(0, 0, rect.width, rect.height);
 
+      // Use the theme foreground color so particles stay visible in both light and dark mode
+      const isDark = document.documentElement.classList.contains("dark");
+      const baseColor = isDark ? "255, 255, 255" : "0, 0, 0";
+
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
       const radius = Math.min(rect.width, rect.height) * 0.525;
@@ -77,7 +81,7 @@ export function AnimatedSphere() {
       // Draw points
       points.forEach((point) => {
         const alpha = 0.2 + (point.z + 1) * 0.4;
-        ctx.fillStyle = `rgba(0, 0, 0, ${alpha})`;
+        ctx.fillStyle = `rgba(${baseColor}, ${alpha})`;
         ctx.fillText(point.char, point.x, point.y);
       });
 
