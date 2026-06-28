@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 const navLinks = [
   { name: "功能特性", href: "/#features" },
   { name: "模型广场", href: "/models" },
+  { name: "降智雷达", href: "/#codex-radar" },
   { name: "接入文档", href: "/#developers" },
   { name: "价格", href: "/models" },
 ];
