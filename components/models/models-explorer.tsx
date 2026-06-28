@@ -105,7 +105,7 @@ export function ModelsExplorer() {
                   key={m.name}
                   className={`group grid grid-cols-2 md:grid-cols-[1.6fr_1fr_1fr_1fr] gap-x-4 gap-y-2 px-6 py-4 items-center hover:bg-foreground/[0.02] transition-colors ${
                     i !== list.length - 1 ? "border-b border-foreground/10" : ""
-                  }`}
+                  } ${m.comingSoon ? "opacity-60" : ""}`}
                 >
                   {/* Name + category */}
                   <div className="col-span-2 md:col-span-1 min-w-0">
@@ -121,29 +121,35 @@ export function ModelsExplorer() {
                           热门
                         </span>
                       )}
-                      <button
-                        type="button"
-                        onClick={() => handleCopy(m.name)}
-                        aria-label={`复制模型 ID ${m.name}`}
-                        title="复制模型 ID"
-                        className={`inline-flex items-center gap-1 shrink-0 h-6 px-2 rounded-md border text-[11px] font-mono transition-all ${
-                          copiedId === m.name
-                            ? "border-emerald-500/40 text-emerald-600 dark:text-emerald-400 bg-emerald-500/5"
-                            : "border-foreground/15 text-muted-foreground hover:text-foreground hover:border-foreground/40 hover:bg-foreground/[0.03]"
-                        }`}
-                      >
-                        {copiedId === m.name ? (
-                          <>
-                            <Check className="w-3 h-3" />
-                            已复制
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="w-3 h-3" />
-                            复制 ID
-                          </>
-                        )}
-                      </button>
+                      {m.comingSoon ? (
+                        <span className="px-2 py-0.5 text-[10px] font-mono border border-amber-500/40 text-amber-600 dark:text-amber-400 bg-amber-500/5 rounded">
+                          暂未开放
+                        </span>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => handleCopy(m.name)}
+                          aria-label={`复制模型 ID ${m.name}`}
+                          title="复制模型 ID"
+                          className={`inline-flex items-center gap-1 shrink-0 h-6 px-2 rounded-md border text-[11px] font-mono transition-all ${
+                            copiedId === m.name
+                              ? "border-emerald-500/40 text-emerald-600 dark:text-emerald-400 bg-emerald-500/5"
+                              : "border-foreground/15 text-muted-foreground hover:text-foreground hover:border-foreground/40 hover:bg-foreground/[0.03]"
+                          }`}
+                        >
+                          {copiedId === m.name ? (
+                            <>
+                              <Check className="w-3 h-3" />
+                              已复制
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="w-3 h-3" />
+                              复制 ID
+                            </>
+                          )}
+                        </button>
+                      )}
                     </div>
                     <div className="text-xs text-muted-foreground mt-0.5">{m.category}</div>
                   </div>

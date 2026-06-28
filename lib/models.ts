@@ -7,6 +7,7 @@ export type ModelInfo = {
   outputRate: string;
   cacheRate: string;
   popular?: boolean;
+  comingSoon?: boolean;
 };
 
 // 全站统一的模型清单：仅 GPT 与 Claude Code 两家官方同源模型
@@ -102,5 +103,6 @@ export const models: ModelInfo[] = [
     inputRate: "$2",
     outputRate: "$10",
     cacheRate: "$0.2",
+    comingSoon: true,
   },
 ];
