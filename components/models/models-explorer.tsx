@@ -61,7 +61,7 @@ export function ModelsExplorer() {
 
       {/* Table header note */}
       <p className="text-sm text-muted-foreground mb-4">
-        全系模型均按<span className="text-foreground font-medium">官方原价 · 1.0× 倍率</span>计费，输入 / 输出 / 缓存价格与官方完全一致，不加价、不降智。
+        价格单位为<span className="text-foreground font-medium">人民币 / 1M tokens</span>，按官方公开价计费，输入 / 输出 / 缓存与官方完全一致，不加价、不降智。
       </p>
 
       {/* Groups */}
@@ -79,9 +79,9 @@ export function ModelsExplorer() {
               {/* Column headers */}
               <div className="hidden md:grid grid-cols-[1.6fr_1fr_1fr_1fr] gap-4 px-6 py-3 bg-foreground/[0.02] border-b border-foreground/10 text-xs font-mono uppercase tracking-wider text-muted-foreground">
                 <span>模型</span>
-                <span className="text-right">输入</span>
-                <span className="text-right">输出</span>
-                <span className="text-right">缓存</span>
+                <span className="text-right">输入 / 1M</span>
+                <span className="text-right">输出 / 1M</span>
+                <span className="text-right">缓存 / 1M</span>
               </div>
               {list.map((m, i) => (
                 <div
