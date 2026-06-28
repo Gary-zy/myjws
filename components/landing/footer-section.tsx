@@ -32,8 +32,7 @@ const footerLinks = {
 
 const socialLinks = [
   { name: "微信", href: "#", qr: "/wechat-qr.png" },
-  { name: "Telegram", href: "#" },
-  { name: "邮箱", href: "#" },
+  { name: "QQ", href: "https://qm.qq.com/q/jt5yll2TcY" },
 ];
 
 export function FooterSection() {
@@ -103,6 +102,8 @@ export function FooterSection() {
                     <a
                       key={link.name}
                       href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1 group"
                     >
                       {link.name}
