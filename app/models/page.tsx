@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Navigation } from "@/components/landing/navigation";
 import { FooterSection } from "@/components/landing/footer-section";
 import { ModelsExplorer } from "@/components/models/models-explorer";
+import { CodexRadarSection } from "@/components/landing/codex-radar-section";
 
 export const metadata: Metadata = {
   title: "模型广场 - MY JARVIS",
@@ -30,11 +31,13 @@ export default function ModelsPage() {
         </div>
       </section>
 
-      <section className="relative pb-28">
+      <section className="relative pb-16">
         <div className="max-w-[1100px] mx-auto px-6 lg:px-12">
           <ModelsExplorer />
         </div>
       </section>
+
+      <CodexRadarSection />
 
       <FooterSection />
     </main>
