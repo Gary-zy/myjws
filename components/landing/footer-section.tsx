@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { AnimatedWave } from "./animated-wave";
 
@@ -30,12 +31,14 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { name: "微信", href: "#" },
+  { name: "微信", href: "#", qr: "/wechat-qr.png" },
   { name: "Telegram", href: "#" },
   { name: "邮箱", href: "#" },
 ];
 
 export function FooterSection() {
+  const [showQr, setShowQr] = useState(false);
+
   return (
     <footer className="relative border-t border-foreground/10">
       {/* Animated wave background */}
@@ -60,16 +63,53 @@ export function FooterSection() {
 
               {/* Social Links */}
               <div className="flex gap-6">
-                {socialLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1 group"
-                  >
-                    {link.name}
-                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                  </a>
-                ))}
+                {socialLinks.map((link) =>
+                  "qr" in link && link.qr ? (
+                    <div
+                      key={link.name}
+                      className="relative"
+                      onMouseEnter={() => setShowQr(true)}
+                      onMouseLeave={() => setShowQr(false)}
+                    >
+                      <button
+                        type="button"
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1 cursor-pointer"
+                      >
+                        {link.name}
+                        <ArrowUpRight className="w-3 h-3" />
+                      </button>
+
+                      {/* Hover QR popover */}
+                      <div
+                        className={`absolute bottom-full left-0 mb-3 w-56 origin-bottom-left transition-all duration-200 z-20 ${
+                          showQr
+                            ? "opacity-100 scale-100 translate-y-0"
+                            : "opacity-0 scale-95 translate-y-1 pointer-events-none"
+                        }`}
+                      >
+                        <div className="rounded-2xl border border-foreground/10 bg-background p-3 shadow-xl">
+                          <img
+                            src={link.qr || "/placeholder.svg"}
+                            alt="微信二维码"
+                            className="w-full rounded-lg"
+                          />
+                          <p className="mt-2 text-center text-xs text-muted-foreground">
+                            扫码添加，咨询与充值
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1 group"
+                    >
+                      {link.name}
+                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                    </a>
+                  )
+                )}
               </div>
             </div>
 
