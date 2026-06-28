@@ -9,8 +9,6 @@ const navLinks = [
   { name: "功能特性", href: "/#features" },
   { name: "模型广场", href: "/models" },
   { name: "降智雷达", href: "/#codex-radar" },
-  { name: "接入文档", href: "/#developers" },
-  { name: "价格", href: "/models" },
 ];
 
 export function Navigation() {
@@ -72,9 +70,6 @@ export function Navigation() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle className={`transition-all duration-500 ${isScrolled ? "h-8 w-8" : "h-9 w-9"}`} />
-            <a href="#" className={`text-foreground/70 hover:text-foreground transition-all duration-500 ${isScrolled ? "text-xs" : "text-sm"}`}>
-              登录
-            </a>
             <Button
               size="sm"
               className={`bg-foreground hover:bg-foreground/90 text-background rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
@@ -139,13 +134,6 @@ export function Navigation() {
           }`}
           style={{ transitionDelay: isMobileMenuOpen ? "300ms" : "0ms" }}
           >
-            <Button 
-              variant="outline" 
-              className="flex-1 rounded-full h-14 text-base"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              登录
-            </Button>
             <Button 
               className="flex-1 bg-foreground text-background rounded-full h-14 text-base"
               onClick={() => setIsMobileMenuOpen(false)}

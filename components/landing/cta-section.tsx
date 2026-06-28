@@ -67,15 +67,22 @@ export function CtaSection() {
                     size="lg"
                     className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
                   >
-                    免费注册领额度
+                    免费注册
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                   </Button>
                   <Button
+                    asChild
                     size="lg"
                     variant="outline"
                     className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
                   >
-                    联系客服
+                    <a
+                      href="https://qm.qq.com/q/jt5yll2TcY"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      联系客服
+                    </a>
                   </Button>
                 </div>
 

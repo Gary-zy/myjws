@@ -123,7 +123,7 @@ export function HeroSection() {
               size="lg" 
               className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
             >
-              免费注册领额度
+              免费注册
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button 
@@ -151,7 +151,7 @@ export function HeroSection() {
               {[
                 { value: "99.9%", label: "接口可用率", company: "稳定直连" },
                 { value: "官方同源", label: "不限速不降智", company: "GPT / CLAUDE" },
-                { value: "11", label: "在线可用模型", company: "GPT / CLAUDE CODE" },
+                { value: "8", label: "在线可用模型", company: "GPT / CLAUDE CODE" },
                 { value: "7×24", label: "全天候服务", company: "在线监控" },
               ].map((stat) => (
                 <div key={`${stat.company}-${i}`} className="flex items-baseline gap-4">
