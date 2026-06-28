@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { Search } from "lucide-react";
 import { models, type ModelInfo } from "@/lib/models";
+import { OpenAIIcon, ClaudeIcon } from "@/components/brand-icons";
 
 const filters = ["全部", "OpenAI", "Claude Code"] as const;
 type Filter = (typeof filters)[number];
@@ -72,8 +73,13 @@ export function ModelsExplorer() {
       <div className="flex flex-col gap-12">
         {Object.entries(grouped).map(([provider, list]) => (
           <div key={provider}>
-            <h2 className="text-sm font-mono tracking-widest text-muted-foreground uppercase mb-4">
-              {provider} · {list.length} 个模型
+            <h2 className="flex items-center gap-2.5 text-sm font-mono tracking-widest text-muted-foreground uppercase mb-4">
+              {provider === "OpenAI" ? (
+                <OpenAIIcon className="w-5 h-5 text-foreground" />
+              ) : (
+                <ClaudeIcon className="w-5 h-5 text-[#D97757]" />
+              )}
+              <span>{provider} · {list.length} 个模型</span>
             </h2>
             <div className="border border-foreground/10 rounded-xl overflow-hidden">
               {/* Column headers */}
@@ -93,6 +99,11 @@ export function ModelsExplorer() {
                   {/* Name + category */}
                   <div className="col-span-2 md:col-span-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
+                      {m.provider === "OpenAI" ? (
+                        <OpenAIIcon className="w-4 h-4 shrink-0 text-foreground" />
+                      ) : (
+                        <ClaudeIcon className="w-4 h-4 shrink-0 text-[#D97757]" />
+                      )}
                       <span className="font-mono font-medium truncate">{m.name}</span>
                       {m.popular && (
                         <span className="px-2 py-0.5 text-[10px] font-mono bg-foreground text-background rounded">

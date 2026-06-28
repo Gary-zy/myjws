@@ -19,7 +19,7 @@ export function HeroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % words.length);
-    }, 2500);
+    }, 1500);
     return () => clearInterval(interval);
   }, []);
 
