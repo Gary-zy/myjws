@@ -1,21 +1,15 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { models } from "@/lib/models";
 
-const integrations = [
-  { name: "gpt-5.5", category: "OpenAI · 旗舰" },
-  { name: "gpt-5.4", category: "OpenAI · 旗舰" },
-  { name: "gpt-5.1", category: "OpenAI · 通用" },
-  { name: "gpt-5", category: "OpenAI · 通用" },
-  { name: "gpt-5-mini", category: "OpenAI · 高性价比" },
-  { name: "o4-mini", category: "OpenAI · 推理" },
-  { name: "claude-opus-4.6", category: "Claude · 旗舰" },
-  { name: "claude-sonnet-4.5", category: "Claude · 通用" },
-  { name: "claude-3.7-sonnet", category: "Claude · 通用" },
-  { name: "claude-code", category: "Claude Code · 编程" },
-  { name: "claude-code-opus", category: "Claude Code · 编程" },
-  { name: "claude-haiku-4", category: "Claude · 高性价比" },
-];
+const marqueeModels = models.map((m) => ({
+  name: m.name,
+  category: `${m.provider} · ${m.category.split(" · ")[0]}`,
+}));
 
 export function IntegrationsSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,7 +32,7 @@ export function IntegrationsSection() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div
-          className={`text-center max-w-3xl mx-auto mb-16 lg:mb-24 transition-all duration-700 ${
+          className={`text-center max-w-3xl mx-auto mb-16 lg:mb-20 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -52,19 +46,24 @@ export function IntegrationsSection() {
             <br />
             全系模型随心调用。
           </h2>
-          <p className="text-xl text-muted-foreground">
-            只做 OpenAI 与 Anthropic 两家官方同源模型，专注、稳定、不掺水。
+          <p className="text-xl text-muted-foreground mb-8">
+            只做 OpenAI 与 Claude Code 两家官方同源模型，专注、稳定、不掺水。
           </p>
+          <Button asChild size="lg" className="bg-foreground hover:bg-foreground/90 text-background rounded-full group">
+            <Link href="/models">
+              查看完整模型与价格
+              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
         </div>
-
       </div>
-      
+
       {/* Full-width marquees outside container */}
       <div className="w-full mb-6">
         <div className="flex gap-6 marquee">
           {[...Array(2)].map((_, setIndex) => (
             <div key={setIndex} className="flex gap-6 shrink-0">
-              {integrations.map((integration) => (
+              {marqueeModels.map((integration) => (
                 <div
                   key={`${integration.name}-${setIndex}`}
                   className="shrink-0 px-8 py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
@@ -79,13 +78,13 @@ export function IntegrationsSection() {
           ))}
         </div>
       </div>
-      
+
       {/* Reverse marquee */}
       <div className="w-full">
         <div className="flex gap-6 marquee-reverse">
           {[...Array(2)].map((_, setIndex) => (
             <div key={setIndex} className="flex gap-6 shrink-0">
-              {[...integrations].reverse().map((integration) => (
+              {[...marqueeModels].reverse().map((integration) => (
                 <div
                   key={`${integration.name}-reverse-${setIndex}`}
                   className="shrink-0 px-8 py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"

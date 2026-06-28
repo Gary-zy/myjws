@@ -58,16 +58,16 @@ const metrics = [
     label: "本季度接口可用率",
   },
   { 
-    value: 860, 
-    suffix: "ms", 
-    prefix: "",
-    label: "平均首字响应时间",
-  },
-  { 
-    value: 20, 
-    suffix: "+", 
+    value: 11, 
+    suffix: "", 
     prefix: "",
     label: "在线可用模型数",
+  },
+  { 
+    value: 7, 
+    suffix: "×24", 
+    prefix: "",
+    label: "全天候在线服务",
   },
 ];
 

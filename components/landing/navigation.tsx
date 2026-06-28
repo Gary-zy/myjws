@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "功能特性", href: "#features" },
-  { name: "模型广场", href: "#models" },
-  { name: "接入文档", href: "#developers" },
-  { name: "价格", href: "#pricing" },
+  { name: "功能特性", href: "/#features" },
+  { name: "模型广场", href: "/models" },
+  { name: "接入文档", href: "/#developers" },
+  { name: "价格", href: "/#pricing" },
 ];
 
 export function Navigation() {
@@ -44,7 +44,7 @@ export function Navigation() {
           }`}
         >
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-2 group">
             <img
               src="/myjarvis-icon.png"
               alt="MY JARVIS"

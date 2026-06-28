@@ -5,15 +5,15 @@ import { AnimatedWave } from "./animated-wave";
 
 const footerLinks = {
   产品: [
-    { name: "功能特性", href: "#features" },
-    { name: "接入流程", href: "#how-it-works" },
-    { name: "模型广场", href: "#models" },
-    { name: "价格", href: "#pricing" },
+    { name: "功能特性", href: "/#features" },
+    { name: "接入流程", href: "/#how-it-works" },
+    { name: "模型广场", href: "/models" },
+    { name: "价格", href: "/#pricing" },
   ],
   开发者: [
-    { name: "接入文档", href: "#developers" },
+    { name: "接入文档", href: "/#developers" },
     { name: "API 参考", href: "#" },
-    { name: "模型列表", href: "#models" },
+    { name: "模型与价格", href: "/models" },
     { name: "服务状态", href: "#" },
   ],
   帮助: [

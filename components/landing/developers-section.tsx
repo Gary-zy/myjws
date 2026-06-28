@@ -33,7 +33,7 @@ const client = new OpenAI({
 })
 
 const res = await client.chat.completions.create({
-  model: "claude-sonnet-4.5",
+  model: "claude-sonnet-4-6",
   messages: [{ role: "user", content: "你好" }],
 })`,
   },

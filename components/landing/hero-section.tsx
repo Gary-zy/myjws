@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSphere } from "./animated-sphere";
@@ -126,11 +127,12 @@ export function HeroSection() {
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button 
+              asChild
               size="lg" 
               variant="outline" 
               className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
             >
-              查看模型广场
+              <Link href="/models">查看模型广场</Link>
             </Button>
           </div>
         </div>
@@ -148,8 +150,8 @@ export function HeroSection() {
             <div key={i} className="flex gap-16">
               {[
                 { value: "99.9%", label: "接口可用率", company: "稳定直连" },
-                { value: "<1s", label: "平均首字延迟", company: "极速响应" },
-                { value: "20+", label: "可用模型", company: "GPT / CLAUDE" },
+                { value: "官方同源", label: "不限速不降智", company: "GPT / CLAUDE" },
+                { value: "11", label: "在线可用模型", company: "GPT / CLAUDE CODE" },
                 { value: "7×24", label: "全天候服务", company: "在线监控" },
               ].map((stat) => (
                 <div key={`${stat.company}-${i}`} className="flex items-baseline gap-4">
