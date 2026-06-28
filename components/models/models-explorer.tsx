@@ -60,8 +60,8 @@ export function ModelsExplorer() {
       </div>
 
       {/* Table header note */}
-      <p className="text-sm text-muted-foreground mb-4 font-mono">
-        价格为相对官方的计费倍率，单位按 1× 起算 · 缓存命中按缓存价计费
+      <p className="text-sm text-muted-foreground mb-4">
+        全系模型均按<span className="text-foreground font-medium">官方原价 · 1.0× 倍率</span>计费，输入 / 输出 / 缓存价格与官方完全一致，不加价、不降智。
       </p>
 
       {/* Groups */}
