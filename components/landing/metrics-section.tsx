@@ -49,25 +49,25 @@ const metrics = [
     value: 2847392, 
     suffix: "", 
     prefix: "",
-    label: "API requests today",
+    label: "今日 API 调用次数",
   },
   { 
     value: 99, 
-    suffix: ".99%", 
+    suffix: ".9%", 
     prefix: "",
-    label: "Uptime this quarter",
+    label: "本季度接口可用率",
   },
   { 
-    value: 23, 
+    value: 860, 
     suffix: "ms", 
     prefix: "",
-    label: "Average response time",
+    label: "平均首字响应时间",
   },
   { 
-    value: 184, 
-    suffix: "", 
+    value: 20, 
+    suffix: "+", 
     prefix: "",
-    label: "Countries served",
+    label: "在线可用模型数",
   },
 ];
 
@@ -101,22 +101,22 @@ export function MetricsSection() {
           <div>
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
-              Live metrics
+              实时数据
             </span>
             <h2
               className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Performance you
+              看得见的
               <br />
-              can measure.
+              稳定与性能。
             </h2>
           </div>
           <div className="flex items-center gap-4 font-mono text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              Live
+              实时
             </span>
             <span className="text-foreground/30">|</span>
             <span>{time.toLocaleTimeString()}</span>

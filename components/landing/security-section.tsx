@@ -5,28 +5,28 @@ import { Shield, Lock, Eye, FileCheck } from "lucide-react";
 
 const securityFeatures = [
   {
-    icon: Shield,
-    title: "SOC 2 Type II",
-    description: "Independently audited security controls with continuous monitoring.",
+    icon: Lock,
+    title: "全程 HTTPS 加密",
+    description: "请求全程 TLS 1.3 加密传输，密钥与数据安全无忧。",
   },
   {
-    icon: Lock,
-    title: "End-to-end encryption",
-    description: "AES-256 encryption for data at rest and TLS 1.3 in transit.",
+    icon: Shield,
+    title: "不记录对话内容",
+    description: "仅统计 Token 用量用于计费，不留存、不分析你的对话内容。",
   },
   {
     icon: Eye,
-    title: "Zero-trust architecture",
-    description: "Every request is authenticated and authorized. No exceptions.",
+    title: "密钥独立可控",
+    description: "支持创建多个 API Key、随时启停，可设置额度与到期时间。",
   },
   {
     icon: FileCheck,
-    title: "GDPR & HIPAA",
-    description: "Full compliance with data protection and healthcare regulations.",
+    title: "用量透明可查",
+    description: "实时账单与调用明细，每一笔消费清晰可追溯。",
   },
 ];
 
-const certifications = ["SOC 2", "ISO 27001", "HIPAA", "GDPR", "CCPA"];
+const certifications = ["HTTPS", "密钥隔离", "不留痕", "可限额", "实时账单"];
 
 export function SecuritySection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,16 +56,16 @@ export function SecuritySection() {
           >
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
-              Security
+              安全与隐私
             </span>
             <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
-              Trust is
+              你的数据，
               <br />
-              non-negotiable.
+              只属于你。
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-              Enterprise-grade security isn&apos;t optional. It&apos;s built into every layer 
-              of our platform, from infrastructure to application.
+              我们只做转发，不碰你的内容。全程加密、密钥隔离、用量透明，
+              让你在调用大模型时同样安心。
             </p>
 
             {/* Certifications */}

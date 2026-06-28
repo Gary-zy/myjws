@@ -5,52 +5,56 @@ import { Copy, Check } from "lucide-react";
 
 const codeExamples = [
   {
-    label: "Install",
-    code: `npm install @optimus/sdk
-
-# or
-yarn add @optimus/sdk
-pnpm add @optimus/sdk`,
+    label: "cURL",
+    code: `curl https://api.myjarvis.ai/v1/chat/completions \\
+  -H "Authorization: Bearer $MYJARVIS_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "model": "gpt-5.5",
+    "messages": [{"role":"user","content":"你好"}]
+  }'`,
   },
   {
-    label: "Initialize",
-    code: `import { Optimus } from '@optimus/sdk'
+    label: "Python",
+    code: `from openai import OpenAI
 
-const optimus = new Optimus({
-  apiKey: process.env.OPTIMUS_KEY
-})`,
+client = OpenAI(
+    api_key="sk-xxxxxxxx",
+    base_url="https://api.myjarvis.ai/v1"
+)`,
   },
   {
-    label: "Deploy",
-    code: `const app = await optimus.deploy({
-  name: 'my-app',
-  region: 'auto',
-  scaling: {
-    min: 1,
-    max: 100
-  }
+    label: "Node.js",
+    code: `import OpenAI from "openai"
+
+const client = new OpenAI({
+  apiKey: process.env.MYJARVIS_KEY,
+  baseURL: "https://api.myjarvis.ai/v1",
 })
 
-console.log('Live at:', app.url)`,
+const res = await client.chat.completions.create({
+  model: "claude-sonnet-4.5",
+  messages: [{ role: "user", content: "你好" }],
+})`,
   },
 ];
 
 const features = [
   { 
-    title: "TypeScript native", 
-    description: "Full type safety with auto-generated types."
+    title: "兼容 OpenAI 接口", 
+    description: "原有 SDK 与代码无需改动，换地址即用。"
   },
   { 
-    title: "Zero config", 
-    description: "Sensible defaults that just work."
+    title: "全语言支持", 
+    description: "Python、Node、Go、cURL 均可直接调用。"
   },
   { 
-    title: "Edge-ready", 
-    description: "Runs anywhere: Node, Deno, Bun, browsers."
+    title: "支持流式输出", 
+    description: "完整支持 stream 流式响应与多并发。"
   },
   { 
-    title: "12KB gzipped", 
-    description: "Lightweight with zero dependencies."
+    title: "Claude Code 可用", 
+    description: "可直接配置进 Claude Code 等编程工具。"
   },
 ];
 
@@ -119,16 +123,16 @@ export function DevelopersSection() {
           >
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
-              For developers
+              开发者接入
             </span>
             <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
-              Built by devs.
+              改个地址，
               <br />
-              <span className="text-muted-foreground">For devs.</span>
+              <span className="text-muted-foreground">立刻开跑。</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-              A thoughtfully designed SDK that gets out of your way. 
-              Ship faster with intuitive APIs and exceptional documentation.
+              完全兼容 OpenAI 接口规范，无需引入新 SDK。
+              只要把 Base URL 指向 MY JARVIS，原有项目即可直接调用 GPT 与 Claude。
             </p>
             
             {/* Features */}
@@ -220,11 +224,11 @@ export function DevelopersSection() {
             {/* Links */}
             <div className="mt-6 flex items-center gap-6 text-sm">
               <a href="#" className="text-foreground hover:underline underline-offset-4">
-                Read the docs
+                查看接入文档
               </a>
               <span className="text-foreground/20">|</span>
               <a href="#" className="text-muted-foreground hover:text-foreground">
-                View on GitHub
+                获取 API Key
               </a>
             </div>
           </div>

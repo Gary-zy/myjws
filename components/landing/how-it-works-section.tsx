@@ -5,38 +5,35 @@ import { useEffect, useRef, useState } from "react";
 const steps = [
   {
     number: "I",
-    title: "Connect your tools",
-    description: "Integrate with your existing stack in minutes. We support 200+ data sources out of the box.",
-    code: `import { optimus } from '@optimus/core'
+    title: "注册并获取 API Key",
+    description: "邮箱注册即送体验额度，在控制台一键创建你的专属 API Key，无需审核、即开即用。",
+    code: `# 在控制台创建你的 Key
+MYJARVIS_API_KEY="sk-xxxxxxxxxxxxxxxx"
 
-optimus.connect({
-  source: 'your-database',
-  sync: true
-})`,
+BASE_URL="https://api.myjarvis.ai/v1"`,
   },
   {
     number: "II",
-    title: "Build your workflow",
-    description: "Design powerful automations with our visual builder or write code directly.",
-    code: `optimus.workflow('process', {
-  trigger: 'event',
-  actions: [
-    'validate',
-    'transform', 
-    'deliver'
-  ]
-})`,
+    title: "替换接口地址",
+    description: "完全兼容 OpenAI 接口，只需把官方地址换成中转地址，原有代码无需改动。",
+    code: `from openai import OpenAI
+
+client = OpenAI(
+    api_key="sk-xxxxxxxx",
+    base_url="https://api.myjarvis.ai/v1"
+)`,
   },
   {
     number: "III",
-    title: "Ship to production",
-    description: "Deploy globally with zero configuration. Your app goes live in under 30 seconds.",
-    code: `optimus.deploy({
-  target: 'production',
-  regions: 'auto'
-})
+    title: "开始调用模型",
+    description: "GPT-5.5、Claude Opus 等全系模型即刻可用，支持流式输出与多并发。",
+    code: `resp = client.chat.completions.create(
+    model="gpt-5.5",
+    messages=[{"role": "user",
+               "content": "你好，Jarvis"}]
+)
 
-// Deployed to 12 regions`,
+print(resp.choices[0].message.content)`,
   },
 ];
 
@@ -88,16 +85,16 @@ export function HowItWorksSection() {
         <div className="mb-16 lg:mb-24">
           <span className="inline-flex items-center gap-3 text-sm font-mono text-background/50 mb-6">
             <span className="w-8 h-px bg-background/30" />
-            Process
+            接入流程
           </span>
           <h2
             className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Three steps.
+            三步接入。
             <br />
-            <span className="text-background/50">Infinite possibilities.</span>
+            <span className="text-background/50">一分钟跑通。</span>
           </h2>
         </div>
 
@@ -151,7 +148,7 @@ export function HowItWorksSection() {
                   <div className="w-3 h-3 rounded-full bg-background/20" />
                   <div className="w-3 h-3 rounded-full bg-background/20" />
                 </div>
-                <span className="text-xs font-mono text-background/40">workflow.ts</span>
+                <span className="text-xs font-mono text-background/40">quickstart.py</span>
               </div>
 
               {/* Code content */}
@@ -187,7 +184,7 @@ export function HowItWorksSection() {
               {/* Status */}
               <div className="px-6 py-4 border-t border-background/10 flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-xs font-mono text-background/40">Ready</span>
+                <span className="text-xs font-mono text-background/40">已连接</span>
               </div>
             </div>
           </div>

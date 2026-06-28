@@ -3,18 +3,18 @@
 import { useEffect, useState, useRef } from "react";
 
 const integrations = [
-  { name: "GitHub", category: "Version Control" },
-  { name: "Slack", category: "Communication" },
-  { name: "Stripe", category: "Payments" },
-  { name: "PostgreSQL", category: "Database" },
-  { name: "Redis", category: "Cache" },
-  { name: "AWS", category: "Cloud" },
-  { name: "MongoDB", category: "Database" },
-  { name: "Vercel", category: "Hosting" },
-  { name: "Figma", category: "Design" },
-  { name: "Linear", category: "Project Management" },
-  { name: "Notion", category: "Documentation" },
-  { name: "OpenAI", category: "AI/ML" },
+  { name: "gpt-5.5", category: "OpenAI · 旗舰" },
+  { name: "gpt-5.4", category: "OpenAI · 旗舰" },
+  { name: "gpt-5.1", category: "OpenAI · 通用" },
+  { name: "gpt-5", category: "OpenAI · 通用" },
+  { name: "gpt-5-mini", category: "OpenAI · 高性价比" },
+  { name: "o4-mini", category: "OpenAI · 推理" },
+  { name: "claude-opus-4.6", category: "Claude · 旗舰" },
+  { name: "claude-sonnet-4.5", category: "Claude · 通用" },
+  { name: "claude-3.7-sonnet", category: "Claude · 通用" },
+  { name: "claude-code", category: "Claude Code · 编程" },
+  { name: "claude-code-opus", category: "Claude Code · 编程" },
+  { name: "claude-haiku-4", category: "Claude · 高性价比" },
 ];
 
 export function IntegrationsSection() {
@@ -34,7 +34,7 @@ export function IntegrationsSection() {
   }, []);
 
   return (
-    <section id="integrations" ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="models" ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div
@@ -44,16 +44,16 @@ export function IntegrationsSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
             <span className="w-8 h-px bg-foreground/30" />
-            Integrations
+            模型广场
             <span className="w-8 h-px bg-foreground/30" />
           </span>
           <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-6">
-            Works with everything
+            GPT 与 Claude Code
             <br />
-            you already use.
+            全系模型随心调用。
           </h2>
           <p className="text-xl text-muted-foreground">
-            200+ pre-built integrations. Connect your entire stack in minutes.
+            只做 OpenAI 与 Anthropic 两家官方同源模型，专注、稳定、不掺水。
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export function IntegrationsSection() {
                   key={`${integration.name}-${setIndex}`}
                   className="shrink-0 px-8 py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
                 >
-                  <div className="text-lg font-medium group-hover:translate-x-1 transition-transform">
+                  <div className="text-lg font-mono font-medium group-hover:translate-x-1 transition-transform">
                     {integration.name}
                   </div>
                   <div className="text-sm text-muted-foreground">{integration.category}</div>
@@ -90,7 +90,7 @@ export function IntegrationsSection() {
                   key={`${integration.name}-reverse-${setIndex}`}
                   className="shrink-0 px-8 py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
                 >
-                  <div className="text-lg font-medium group-hover:translate-x-1 transition-transform">
+                  <div className="text-lg font-mono font-medium group-hover:translate-x-1 transition-transform">
                     {integration.name}
                   </div>
                   <div className="text-sm text-muted-foreground">{integration.category}</div>

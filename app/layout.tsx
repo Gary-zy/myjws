@@ -21,9 +21,12 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Optimus - Platform to Create',
-  description: 'The creative platform for teams who ship. Build, deploy, and scale with unprecedented velocity.',
+  title: 'MY JARVIS - 稳定的 GPT 与 Claude Code API 中转站',
+  description: 'MY JARVIS 是专注 OpenAI GPT 与 Claude Code 模型的 API 中转站，提供稳定直连、极速响应、按量计费的统一接口。',
   generator: 'v0.app',
+  icons: {
+    icon: '/myjarvis-icon.png',
+  },
 }
 
 export default function RootLayout({
@@ -32,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="zh-CN">
       <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         {children}
         <Analytics />

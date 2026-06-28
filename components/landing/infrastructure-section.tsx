@@ -3,12 +3,12 @@
 import { useEffect, useState, useRef } from "react";
 
 const locations = [
-  { city: "San Francisco", region: "US West", latency: "12ms" },
-  { city: "New York", region: "US East", latency: "18ms" },
-  { city: "London", region: "Europe", latency: "24ms" },
-  { city: "Tokyo", region: "Asia Pacific", latency: "32ms" },
-  { city: "Sydney", region: "Oceania", latency: "45ms" },
-  { city: "Sao Paulo", region: "South America", latency: "38ms" },
+  { city: "电信线路", region: "华东 · 默认接入", latency: "18ms" },
+  { city: "联通线路", region: "华北 · 智能调度", latency: "22ms" },
+  { city: "移动线路", region: "华南 · 智能调度", latency: "26ms" },
+  { city: "香港节点", region: "亚太 · 海外加速", latency: "35ms" },
+  { city: "新加坡节点", region: "亚太 · 海外加速", latency: "42ms" },
+  { city: "美西节点", region: "北美 · 官方同源", latency: "60ms" },
 ];
 
 export function InfrastructureSection() {
@@ -47,31 +47,31 @@ export function InfrastructureSection() {
           >
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
-              Infrastructure
+              线路与节点
             </span>
             <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
-              Global by
+              多线路
               <br />
-              default.
+              智能调度。
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-              Deploy once, run everywhere. Our edge network spans 17 data centers 
-              across 6 continents, delivering sub-50ms latency to 99% of the world.
+              三大运营商线路全覆盖，海外节点官方同源直连。
+              系统自动为每次请求选择最优路径，国内直连低延迟，无需自备梯子。
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8">
               <div>
-                <div className="text-4xl lg:text-5xl font-display mb-2">17</div>
-                <div className="text-sm text-muted-foreground">Data centers</div>
+                <div className="text-4xl lg:text-5xl font-display mb-2">6+</div>
+                <div className="text-sm text-muted-foreground">接入线路</div>
               </div>
               <div>
-                <div className="text-4xl lg:text-5xl font-display mb-2">99.99%</div>
-                <div className="text-sm text-muted-foreground">Uptime SLA</div>
+                <div className="text-4xl lg:text-5xl font-display mb-2">99.9%</div>
+                <div className="text-sm text-muted-foreground">接口可用率</div>
               </div>
               <div>
-                <div className="text-4xl lg:text-5xl font-display mb-2">&lt;50ms</div>
-                <div className="text-sm text-muted-foreground">Global latency</div>
+                <div className="text-4xl lg:text-5xl font-display mb-2">&lt;1s</div>
+                <div className="text-sm text-muted-foreground">首字延迟</div>
               </div>
             </div>
           </div>
@@ -85,10 +85,10 @@ export function InfrastructureSection() {
             <div className="border border-foreground/10">
               {/* Header */}
               <div className="px-6 py-4 border-b border-foreground/10 flex items-center justify-between">
-                <span className="text-sm font-mono text-muted-foreground">Edge Network</span>
+                <span className="text-sm font-mono text-muted-foreground">线路状态</span>
                 <span className="flex items-center gap-2 text-xs font-mono text-green-600">
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  All operational
+                  全部正常
                 </span>
               </div>
 

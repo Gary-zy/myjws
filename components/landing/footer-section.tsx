@@ -4,35 +4,35 @@ import { ArrowUpRight } from "lucide-react";
 import { AnimatedWave } from "./animated-wave";
 
 const footerLinks = {
-  Product: [
-    { name: "Features", href: "#features" },
-    { name: "How it works", href: "#how-it-works" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Integrations", href: "#integrations" },
+  产品: [
+    { name: "功能特性", href: "#features" },
+    { name: "接入流程", href: "#how-it-works" },
+    { name: "模型广场", href: "#models" },
+    { name: "价格", href: "#pricing" },
   ],
-  Developers: [
-    { name: "Documentation", href: "#developers" },
-    { name: "API Reference", href: "#" },
-    { name: "SDK", href: "#developers" },
-    { name: "Status", href: "#" },
+  开发者: [
+    { name: "接入文档", href: "#developers" },
+    { name: "API 参考", href: "#" },
+    { name: "模型列表", href: "#models" },
+    { name: "服务状态", href: "#" },
   ],
-  Company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Careers", href: "#", badge: "Hiring" },
-    { name: "Contact", href: "#" },
+  帮助: [
+    { name: "充值说明", href: "#pricing" },
+    { name: "常见问题", href: "#" },
+    { name: "联系客服", href: "#", badge: "在线" },
+    { name: "加入交流群", href: "#" },
   ],
-  Legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-    { name: "Security", href: "#security" },
+  条款: [
+    { name: "隐私政策", href: "#" },
+    { name: "服务条款", href: "#" },
+    { name: "安全与隐私", href: "#security" },
   ],
 };
 
 const socialLinks = [
-  { name: "Twitter", href: "#" },
-  { name: "GitHub", href: "#" },
-  { name: "LinkedIn", href: "#" },
+  { name: "微信", href: "#" },
+  { name: "Telegram", href: "#" },
+  { name: "邮箱", href: "#" },
 ];
 
 export function FooterSection() {
@@ -50,12 +50,12 @@ export function FooterSection() {
             {/* Brand Column */}
             <div className="col-span-2">
               <a href="#" className="inline-flex items-center gap-2 mb-6">
-                <span className="text-2xl font-display">Optimus</span>
-                <span className="text-xs text-muted-foreground font-mono">TM</span>
+                <img src="/myjarvis-icon.png" alt="MY JARVIS" className="h-9 w-9" />
+                <span className="text-2xl font-display">MY JARVIS</span>
               </a>
 
               <p className="text-muted-foreground leading-relaxed mb-8 max-w-xs">
-                The platform for teams who ship. Build, deploy, and scale with unprecedented velocity.
+                专注 GPT 与 Claude Code 的 API 中转站。官方同源、稳定直连、按量计费。
               </p>
 
               {/* Social Links */}
@@ -102,13 +102,13 @@ export function FooterSection() {
         {/* Bottom Bar */}
         <div className="py-8 border-t border-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            2025 Optimus. All rights reserved.
+            © 2025 MY JARVIS. 保留所有权利。
           </p>
 
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-500" />
-              All systems operational
+              所有服务运行正常
             </span>
           </div>
         </div>

@@ -4,32 +4,32 @@ import { useEffect, useState } from "react";
 
 const testimonials = [
   {
-    quote: "Optimus transformed our deployment pipeline. What used to take hours now happens in seconds.",
-    author: "Sarah Chen",
-    role: "CTO",
-    company: "Meridian Labs",
-    metric: "10x faster deployments",
+    quote: "从官方迁到 MY JARVIS 只改了一行 base_url，速度更快，再也没遇到过限速。",
+    author: "陈工",
+    role: "后端工程师",
+    company: "某 AI 创业团队",
+    metric: "迁移仅用 1 分钟",
   },
   {
-    quote: "The developer experience is unmatched. Our team's productivity has never been higher.",
-    author: "Marcus Webb",
-    role: "Engineering Lead",
-    company: "Flux Systems",
-    metric: "40% more features shipped",
+    quote: "Claude Code 直接配上中转地址就能用，价格比官方省了一大截，体验完全一致。",
+    author: "Marcus",
+    role: "独立开发者",
+    company: "SaaS 工具作者",
+    metric: "成本下降 40%",
   },
   {
-    quote: "Finally, infrastructure that scales with our ambition. Zero downtime since we switched.",
-    author: "Elena Rodriguez",
-    role: "VP Engineering",
-    company: "Beacon AI",
-    metric: "99.99% uptime",
+    quote: "国内直连不用挂梯子，首字延迟很低，跑批量任务一晚上都很稳定。",
+    author: "李同学",
+    role: "算法在读研究生",
+    company: "高校实验室",
+    metric: "99.9% 调用成功率",
   },
   {
-    quote: "The integrations are seamless. We connected our entire stack in a single afternoon.",
-    author: "James Liu",
-    role: "Founder",
-    company: "Prism Analytics",
-    metric: "50+ integrations used",
+    quote: "只做 GPT 和 Claude 两家，反而让我很放心，模型版本更新也很及时。",
+    author: "Wang",
+    role: "技术负责人",
+    company: "电商 SaaS",
+    metric: "20+ 模型随心切换",
   },
 ];
 
@@ -56,7 +56,7 @@ export function TestimonialsSection() {
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
           <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
-            What people say
+            用户怎么说
           </span>
           <div className="flex-1 h-px bg-foreground/10" />
           <span className="font-mono text-xs text-muted-foreground">
@@ -105,7 +105,7 @@ export function TestimonialsSection() {
               }`}
             >
               <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase block mb-4">
-                Key Result
+                关键收益
               </span>
               <p className="font-display text-3xl md:text-4xl text-foreground">
                 {activeTestimonial.metric}
@@ -138,7 +138,7 @@ export function TestimonialsSection() {
         {/* Company Logos Marquee Label */}
         <div className="mt-24 pt-12 border-t border-foreground/10">
           <p className="font-mono text-xs tracking-widest text-muted-foreground uppercase mb-8 text-center">
-            Trusted by forward-thinking teams
+            被这些团队与开发者信赖
           </p>
         </div>
       </div>
@@ -148,7 +148,7 @@ export function TestimonialsSection() {
         <div className="flex gap-16 items-center marquee">
           {[...Array(2)].map((_, setIdx) => (
             <div key={setIdx} className="flex gap-16 items-center shrink-0">
-              {["Meridian Labs", "Flux Systems", "Beacon AI", "Prism Analytics", "Nova Tech", "Quantum Corp", "Atlas Digital", "Vertex Labs"].map(
+              {["AI 创业团队", "独立开发者", "SaaS 厂商", "高校实验室", "出海工具", "效率工具作者", "内容创作者", "技术团队"].map(
                 (company) => (
                   <span
                     key={`${setIdx}-${company}`}

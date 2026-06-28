@@ -5,26 +5,26 @@ import { useEffect, useRef, useState } from "react";
 const features = [
   {
     number: "01",
-    title: "Instant Deployment",
-    description: "Push to production in seconds. Our edge network ensures your applications load instantly, anywhere in the world.",
+    title: "官方同源 · 稳定直连",
+    description: "GPT 与 Claude Code 全系模型均为官方同源转发，不限速、不降智，长连接稳定，告别频繁 429 与超时。",
     visual: "deploy",
   },
   {
     number: "02",
-    title: "AI-Native Workflows",
-    description: "Build intelligent applications with built-in AI capabilities. From inference to training, everything scales automatically.",
+    title: "兼容 OpenAI 接口",
+    description: "完全兼容 OpenAI API 格式，无需改动业务代码，只需替换 Base URL 与 API Key 即可无缝迁移。",
     visual: "ai",
   },
   {
     number: "03",
-    title: "Real-time Collaboration",
-    description: "Work together seamlessly. Live preview, instant feedback, and version control that actually makes sense.",
+    title: "极速响应 · 多线路",
+    description: "国内多线路智能调度，平均首字延迟低于 1 秒，支持流式输出，海外节点自动就近接入。",
     visual: "collab",
   },
   {
     number: "04",
-    title: "Enterprise Security",
-    description: "Bank-grade encryption, SOC 2 compliance, and granular access controls. Your data stays yours.",
+    title: "按量计费 · 用多少付多少",
+    description: "透明的按 Token 计费，充值不过期，实时账单与用量明细，余额、调用记录一目了然。",
     visual: "security",
   },
 ];
@@ -323,16 +323,16 @@ export function FeaturesSection() {
         <div className="mb-16 lg:mb-24">
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
             <span className="w-8 h-px bg-foreground/30" />
-            Capabilities
+            核心能力
           </span>
           <h2
             className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Everything you need.
+            你需要的，全都有。
             <br />
-            <span className="text-muted-foreground">Nothing you don&apos;t.</span>
+            <span className="text-muted-foreground">多余的，一概没有。</span>
           </h2>
         </div>
 
