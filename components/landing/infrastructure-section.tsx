@@ -3,12 +3,10 @@
 import { useEffect, useState, useRef } from "react";
 
 const locations = [
-  { city: "电信线路", region: "华东 · 默认接入", latency: "18ms" },
-  { city: "联通线路", region: "华北 · 智能调度", latency: "22ms" },
-  { city: "移动线路", region: "华南 · 智能调度", latency: "26ms" },
-  { city: "香港节点", region: "亚太 · 海外加速", latency: "35ms" },
-  { city: "新加坡节点", region: "亚太 · 海外加速", latency: "42ms" },
-  { city: "美西节点", region: "北美 · 官方同源", latency: "60ms" },
+  { city: "Cloudflare 边缘网络", region: "全球 CDN · 就近接入", latency: "在线" },
+  { city: "Anti-DDoS 防护", region: "Cloudflare · 自动防护", latency: "已启用" },
+  { city: "全程 TLS 加密", region: "Cloudflare · 强制 HTTPS", latency: "已启用" },
+  { city: "官方同源回源", region: "GPT / Claude · 直连", latency: "在线" },
 ];
 
 export function InfrastructureSection() {
@@ -47,31 +45,31 @@ export function InfrastructureSection() {
           >
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
-              线路与节点
+              线路与防护
             </span>
             <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
-              多线路
+              Cloudflare
               <br />
-              智能调度。
+              全球加速。
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-              三大运营商线路全覆盖，海外节点官方同源直连。
-              系统自动为每次请求选择最优路径，国内直连低延迟，无需自备梯子。
+              全站接入 Cloudflare 边缘网络，就近接入、自动防护、全程加密。
+              回源直连 GPT 与 Claude 官方，稳定可靠，无需自备梯子。
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8">
               <div>
-                <div className="text-4xl lg:text-5xl font-display mb-2">6+</div>
-                <div className="text-sm text-muted-foreground">接入线路</div>
+                <div className="text-4xl lg:text-5xl font-display mb-2">CF</div>
+                <div className="text-sm text-muted-foreground">全球边缘网络</div>
               </div>
               <div>
                 <div className="text-4xl lg:text-5xl font-display mb-2">99.9%</div>
                 <div className="text-sm text-muted-foreground">接口可用率</div>
               </div>
               <div>
-                <div className="text-4xl lg:text-5xl font-display mb-2">&lt;1s</div>
-                <div className="text-sm text-muted-foreground">首字延迟</div>
+                <div className="text-4xl lg:text-5xl font-display mb-2">TLS</div>
+                <div className="text-sm text-muted-foreground">全程加密</div>
               </div>
             </div>
           </div>
@@ -85,7 +83,7 @@ export function InfrastructureSection() {
             <div className="border border-foreground/10">
               {/* Header */}
               <div className="px-6 py-4 border-b border-foreground/10 flex items-center justify-between">
-                <span className="text-sm font-mono text-muted-foreground">线路状态</span>
+                <span className="text-sm font-mono text-muted-foreground">线路与防护状态</span>
                 <span className="flex items-center gap-2 text-xs font-mono text-green-600">
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                   全部正常
