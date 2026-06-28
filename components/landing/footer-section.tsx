@@ -16,9 +16,9 @@ export function FooterSection() {
         <div className="py-16 lg:py-24">
           <div className="max-w-md">
             {/* Brand */}
-            <a href="#" className="inline-flex items-center gap-2 mb-6">
-              <img src="/myjarvis-icon.png" alt="MY JARVIS" className="h-9 w-9 dark:invert" />
-              <span className="text-2xl font-display">MY JARVIS</span>
+            <a href="#" className="inline-flex items-center gap-2.5 mb-6">
+              <img src="/myjarvis-icon.png" alt="我的贾维斯" className="h-12 w-12 dark:invert" />
+              <span className="text-2xl font-display">我的贾维斯</span>
             </a>
 
             <p className="text-muted-foreground leading-relaxed mb-8 max-w-xs">
@@ -43,7 +43,7 @@ export function FooterSection() {
         {/* Bottom Bar */}
         <div className="py-8 border-t border-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 MY JARVIS. 保留所有权利。
+            © 2025 我的贾维斯. 保留所有权利。
           </p>
 
           <div className="flex items-center gap-4 text-sm text-muted-foreground">

@@ -44,13 +44,13 @@ export function Navigation() {
           }`}
         >
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-2.5 group">
             <img
               src="/myjarvis-icon.png"
-              alt="MY JARVIS"
-              className={`transition-all duration-500 dark:invert ${isScrolled ? "h-8 w-8" : "h-10 w-10"}`}
+              alt="我的贾维斯"
+              className={`transition-all duration-500 dark:invert ${isScrolled ? "h-10 w-10" : "h-14 w-14"}`}
             />
-            <span className={`font-display tracking-tight transition-all duration-500 ${isScrolled ? "text-xl" : "text-2xl"}`}>MY JARVIS</span>
+            <span className={`font-display tracking-tight transition-all duration-500 ${isScrolled ? "text-xl" : "text-2xl"}`}>我的贾维斯</span>
           </a>
 
           {/* Desktop Navigation */}

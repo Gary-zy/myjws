@@ -321,18 +321,18 @@ export function FeaturesSection() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="mb-16 lg:mb-24">
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
+          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-10">
             <span className="w-8 h-px bg-foreground/30" />
             核心能力
           </span>
           <h2
-            className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
+            className={`text-4xl lg:text-6xl font-display tracking-tight leading-[1.3] transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
             你需要的，全都有。
             <br />
-            <span className="text-muted-foreground">多余的，一概没有。</span>
+            <span className="text-muted-foreground line-through decoration-2 decoration-foreground/40">多余的，一概没有。</span>
           </h2>
         </div>
 
