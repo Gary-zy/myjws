@@ -71,10 +71,11 @@ export function Navigation() {
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle className={`transition-all duration-500 ${isScrolled ? "h-8 w-8" : "h-9 w-9"}`} />
             <Button
+              asChild
               size="sm"
               className={`bg-foreground hover:bg-foreground/90 text-background rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
             >
-              立即接入
+              <a href="https://api.aijws.com/login">立即接入</a>
             </Button>
           </div>
 
@@ -135,10 +136,11 @@ export function Navigation() {
           style={{ transitionDelay: isMobileMenuOpen ? "300ms" : "0ms" }}
           >
             <Button 
+              asChild
               className="flex-1 bg-foreground text-background rounded-full h-14 text-base"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              立即接入
+              <a href="https://api.aijws.com/login">立即接入</a>
             </Button>
           </div>
         </div>
